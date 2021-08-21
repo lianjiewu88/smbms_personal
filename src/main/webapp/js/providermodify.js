@@ -52,7 +52,7 @@ $(function(){
 	});
 	
 	backBtn.on("click",function(){
-		//alert("modify: "+referer);
+		//alert("modified: "+referer);
 		if(referer != undefined 
 			&& null != referer 
 			&& "" != referer

@@ -26,7 +26,7 @@ public class Provider {
     //创建时间
     private Date creationDate;
     //更新者
-    private Integer modifyBy;
+    private Integer modifiedBy;
     //更新时间
     private Date modifyDate;
 
@@ -111,11 +111,11 @@ public class Provider {
     }
 
     public Integer getModifyBy() {
-        return modifyBy;
+        return modifiedBy;
     }
 
-    public void setModifyBy(Integer modifyBy) {
-        this.modifyBy = modifyBy;
+    public void setModifyBy(Integer modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
 
     public Date getModifyDate() {

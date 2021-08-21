@@ -28,8 +28,6 @@ public class BaseDao {
         url = properties.getProperty("url");
         userName = properties.getProperty("userName");
         password = properties.getProperty("password");
-        System.out.println(driver);
-
     }
 
     // 获取数据库的连接
@@ -37,7 +35,7 @@ public class BaseDao {
         Connection connection = null;
         try {
 //            Class.forName("com.mysql.jdbc.Driver");
-//            Class.forName(driver);
+            Class.forName(driver);
             // 之所以写forName()是为了使用类加载器加载Driver类，从而运行其内部的静态代码块
             // 下面的DriverManager实现注册驱动的作用
             // 但是jdbc4.0以后，在META-INF\services\java.sql.Driver里面有声明，所以即使不写也可以

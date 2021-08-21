@@ -1,6 +1,7 @@
 package com.study.filter;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public class CharacterEncodingFilter implements Filter {

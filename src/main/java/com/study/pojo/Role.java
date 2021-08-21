@@ -8,7 +8,7 @@ public class Role {
     private String roleName;
     private Integer createdBy;
     private Date creationDate;
-    private Integer modifyBy;
+    private Integer modifiedBy;
     private Date modifyDate;
 
     public Integer getId() {
@@ -52,11 +52,11 @@ public class Role {
     }
 
     public Integer getModifyBy() {
-        return modifyBy;
+        return modifiedBy;
     }
 
-    public void setModifyBy(Integer modifyBy) {
-        this.modifyBy = modifyBy;
+    public void setModifyBy(Integer modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
 
     public Date getModifyDate() {

@@ -12,9 +12,9 @@ public class User {
     private String phone;
     private String address;
     private Integer userRole;
-    private Integer createBy;
+    private Integer createdBy;
     private Date creationDate;
-    private Integer modifyBy;
+    private Integer modifiedBy;
     private Date modifyDate;
 
     private Integer age;
@@ -94,11 +94,11 @@ public class User {
     }
 
     public Integer getCreateBy() {
-        return createBy;
+        return createdBy;
     }
 
-    public void setCreateBy(Integer createBy) {
-        this.createBy = createBy;
+    public void setCreatedBy(Integer createdBy) {
+        this.createdBy = createdBy;
     }
 
     public Date getCreationDate() {
@@ -110,11 +110,11 @@ public class User {
     }
 
     public Integer getModifyBy() {
-        return modifyBy;
+        return modifiedBy;
     }
 
-    public void setModifyBy(Integer modifyBy) {
-        this.modifyBy = modifyBy;
+    public void setModifiedBy(Integer modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
 
     public Date getModifyDate() {
