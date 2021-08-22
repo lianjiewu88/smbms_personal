@@ -28,8 +28,8 @@
 					<font color="red"></font>
                 </div>
                 <div>
-                    <label for="ruserPassword">确认密码：</label>
-                    <input type="password" name="ruserPassword" id="ruserPassword" value=""> 
+                    <label for="rUserPassword">确认密码：</label>
+                    <input type="password" name="rUserPassword" id="rUserPassword" value="">
 					<font color="red"></font>
                 </div>
                 <div>
@@ -55,7 +55,7 @@
                    <input name="address" id="address"  value="">
                 </div>
                 <div>
-                    <label >用户角色：</label>
+                    <label for="userRole">用户角色：</label>
                     <!-- 列出所有的角色分类 -->
 					<select name="userRole" id="userRole"></select>
 	        		<font color="red"></font>

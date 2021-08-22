@@ -6,11 +6,12 @@
                 <strong>你现在所在的位置是:</strong>
                 <span>用户管理页面</span>
             </div>
+			<%--根据跳进进行查询--%>
             <div class="search">
            		<form method="get" action="${pageContext.request.contextPath }/jsp/user.do">
 					<input name="method" value="query" class="input-text" type="hidden">
 					 <span>用户名：</span>
-					 <input name="queryname" class="input-text"	type="text" value="${queryUserName }">
+					 <input name="queryName" class="input-text"	type="text" value="${queryUserName }">
 					 
 					 <span>用户角色：</span>
 					 <select name="queryUserRole">
@@ -28,7 +29,7 @@
 					 <a href="${pageContext.request.contextPath}/jsp/useradd.jsp" >添加用户</a>
 				</form>
             </div>
-            <!--用户-->
+            <!--用户列表-->
             <table class="providerTable" cellpadding="0" cellspacing="0">
                 <tr class="firstTr">
                     <th width="10%">用户编码</th>
@@ -70,6 +71,7 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<%--统计以及分页--%>
 			<input type="hidden" id="totalPageCount" value="${totalPageCount}"/>
 		  	<c:import url="rollpage.jsp">
 	          	<c:param name="totalCount" value="${totalCount}"/>

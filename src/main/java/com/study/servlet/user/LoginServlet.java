@@ -18,8 +18,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("LoginServlet-start.....");
-
         // 获取用户名和密码
         String userCode = req.getParameter("userCode");
         String userPassword = req.getParameter("userPassword");

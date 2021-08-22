@@ -67,6 +67,11 @@
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/jsp/user.do</url-pattern>
     </servlet-mapping>
+    <!--用户查询-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>UserServlet</servlet-name>-->
+<!--        <url-pattern>/jsp/user.do</url-pattern>-->
+<!--    </servlet-mapping>-->
 
     <!--默认session过期时间：30分钟-->
     <session-config>

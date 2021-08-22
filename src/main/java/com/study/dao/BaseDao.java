@@ -12,22 +12,26 @@ public class BaseDao {
     private static String url;
     private static String userName;
     private static String password;
+    public static String pageSize;
 
     // 静态代码块，类加载时进行初始化
     static {
         InputStream inputStream = BaseDao.class.getClassLoader().getResourceAsStream("db.properties");
-//        InputStream inputStream = ClassLoader.getSystemResourceAsStream("db.properties");
         Properties properties = new Properties();
         try {
             properties.load(inputStream);
-
+            driver = properties.getProperty("driver");
+            url = properties.getProperty("url");
+            userName = properties.getProperty("userName");
+            password = properties.getProperty("password");
+            inputStream = BaseDao.class.getClassLoader().getResourceAsStream("pagehelper.properties");
+            properties.load(inputStream);
+            pageSize = properties.getProperty("pageSize");
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        driver = properties.getProperty("driver");
-        url = properties.getProperty("url");
-        userName = properties.getProperty("userName");
-        password = properties.getProperty("password");
+
     }
 
     // 获取数据库的连接

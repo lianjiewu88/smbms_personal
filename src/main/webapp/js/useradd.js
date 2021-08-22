@@ -1,7 +1,7 @@
 ﻿var userCode = null;
 var userName = null;
 var userPassword = null;
-var ruserPassword = null;
+var rUserPassword = null;
 var phone = null;
 var birthday = null;
 var userRole = null;
@@ -13,7 +13,7 @@ $(function(){
 	userCode = $("#userCode");
 	userName = $("#userName");
 	userPassword = $("#userPassword");
-	ruserPassword = $("#ruserPassword");
+	rUserPassword = $("#rUserPassword");
 	phone = $("#phone");
 	birthday = $("#birthday");
 	userRole = $("#userRole");
@@ -23,7 +23,7 @@ $(function(){
 	userCode.next().html("*");
 	userName.next().html("*");
 	userPassword.next().html("*");
-	ruserPassword.next().html("*");
+	rUserPassword.next().html("*");
 	phone.next().html("*");
 	birthday.next().html("*");
 	userRole.next().html("*");
@@ -31,7 +31,7 @@ $(function(){
 	$.ajax({
 		type:"GET",//请求类型
 		url:path+"/jsp/user.do",//请求的url
-		data:{method:"getrolelist"},//请求参数
+		data:{method:"getRoleList"},//请求参数
 		dataType:"json",//ajax接口（请求url）返回的数据类型
 		success:function(data){//data：返回数据（json对象）
 			if(data != null){
@@ -106,14 +106,14 @@ $(function(){
 		}
 	});
 	
-	ruserPassword.bind("focus",function(){
-		validateTip(ruserPassword.next(),{"color":"#666666"},"* 请输入与上面一只的密码",false);
+	rUserPassword.bind("focus",function(){
+		validateTip(rUserPassword.next(),{"color":"#666666"},"* 请输入与上面一只的密码",false);
 	}).bind("blur",function(){
-		if(ruserPassword.val() != null && ruserPassword.val().length > 6
-				&& ruserPassword.val().length < 20 && userPassword.val() == ruserPassword.val()){
-			validateTip(ruserPassword.next(),{"color":"green"},imgYes,true);
+		if(rUserPassword.val() != null && rUserPassword.val().length > 6
+				&& rUserPassword.val().length < 20 && userPassword.val() == rUserPassword.val()){
+			validateTip(rUserPassword.next(),{"color":"green"},imgYes,true);
 		}else{
-			validateTip(ruserPassword.next(),{"color":"red"},imgNo + " 两次密码输入不一致，请重新输入",false);
+			validateTip(rUserPassword.next(),{"color":"red"},imgNo + " 两次密码输入不一致，请重新输入",false);
 		}
 	});
 	
@@ -156,8 +156,8 @@ $(function(){
 			userName.blur();
 		}else if(userPassword.attr("validateStatus") != "true"){
 			userPassword.blur();
-		}else if(ruserPassword.attr("validateStatus") != "true"){
-			ruserPassword.blur();
+		}else if(rUserPassword.attr("validateStatus") != "true"){
+			rUserPassword.blur();
 		}else if(birthday.attr("validateStatus") != "true"){
 			birthday.blur();
 		}else if(phone.attr("validateStatus") != "true"){
