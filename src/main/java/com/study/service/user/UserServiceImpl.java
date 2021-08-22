@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
         userDao = new UserDaoImpl();
     }
 
+    // 用户登录
     public User login(String userCode, String password) {
         Connection connection = BaseDao.getConnection();
         User user = null;
@@ -35,10 +36,34 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    // 修改用户密码
+    public boolean updatePwd(int userId, String password) {
+        Connection connection = BaseDao.getConnection();
+        boolean flag = false;
+        try {
+            if (userDao.updatePwd(connection, userId, password) == 1) {
+                flag = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            BaseDao.closeResources(connection, null, null);
+        }
+        return flag;
+    }
+
+    // 测试登录
     @Test
     public void test() {
         UserServiceImpl userService = new UserServiceImpl();
         User user = userService.login("admin", "123456sadf7");
         System.out.println("PASSWORD:" + user.getUserPassword());
+    }
+    // 测试修改密码
+    @Test
+    public void testUpdatePassword() {
+        UserService userService = new UserServiceImpl();
+        boolean flag = userService.updatePwd(15, "1234567");
+        System.out.println(flag);
     }
 }

@@ -87,7 +87,7 @@ li{
 }
 
 /*公共部分主体内容*/
-.publicMian{
+.publicMain{
     border-top: 1px solid #c2ccd5;
     display: flex;  /*变为弹性盒模型*/
     display: -webkit-flex;

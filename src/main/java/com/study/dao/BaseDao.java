@@ -50,10 +50,10 @@ public class BaseDao {
     public static ResultSet execute(Connection connection, PreparedStatement preparedStatement, ResultSet resultSet, String sql, Object[] params) throws SQLException {
         // 预编译的sql，在后面直接执行就可以了
         preparedStatement = connection.prepareStatement(sql);
-
-        for (int i = 0; i < params.length; i++) {
-            preparedStatement.setObject(i + 1, params[i]);
-        }
+        if (params != null)
+            for (int i = 0; i < params.length; i++) {
+                preparedStatement.setObject(i + 1, params[i]);
+            }
         resultSet = preparedStatement.executeQuery();
         return resultSet;
     }

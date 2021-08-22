@@ -1,10 +1,12 @@
 package com.study.servlet.user;
 
 import com.study.pojo.User;
+import com.study.service.user.UserService;
 import com.study.service.user.UserServiceImpl;
 import com.study.util.Constants;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +25,7 @@ public class LoginServlet extends HttpServlet {
         String userPassword = req.getParameter("userPassword");
 
         // 和数据库中的密码进行对比，调用业务层代码
-        UserServiceImpl userService = new UserServiceImpl();
+        UserService userService = new UserServiceImpl();
         User user = userService.login(userCode, userPassword);
 
         if (user != null) {
@@ -31,6 +33,8 @@ public class LoginServlet extends HttpServlet {
             // 将用户的信息放到session中
             req.getSession().setAttribute(Constants.USER_SESSION, user);
             // 跳转到登录后的主页面
+//            Cookie cookie = new Cookie("name","lianjie");
+//            resp.addCookie(cookie);
             resp.sendRedirect("jsp/frame.jsp");
         } else {
             // 转发回登录页面，并且携带错误信息

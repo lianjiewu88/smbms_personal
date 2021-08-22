@@ -40,4 +40,18 @@ public class UserDaoImpl implements UserDao {
         }
         return user;
     }
+
+    public int updatePwd(Connection connection, int userId, String password) throws SQLException {
+
+        int result = 0;
+        if (connection != null) {
+            String sql = "update smbms_user set userPassword = ? where id = ?";
+            PreparedStatement preparedStatement = null;
+            Object[] params = {password, userId};
+            result = BaseDao.execute(connection, preparedStatement, sql, params);
+            BaseDao.closeResources(null, preparedStatement, null);
+        }
+
+        return result;
+    }
 }

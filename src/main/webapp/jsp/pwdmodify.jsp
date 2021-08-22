@@ -22,7 +22,7 @@
 						<font color="red"></font>
                     </div>
                     <div>
-                        <label for="newPassword">确认新密码：</label>
+                        <label for="rnewPassword">确认新密码：</label>
                         <input type="password" name="rnewpassword" id="rnewpassword" value=""> 
 						<font color="red"></font>
                     </div>
@@ -35,4 +35,4 @@
         </div>
     </section>
 <%@include file="/jsp/common/foot.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/pwdmodify.js"></script>
+<script charset="UTF-8" type="text/javascript" src="${pageContext.request.contextPath }/js/pwdmodify.js"></script>
